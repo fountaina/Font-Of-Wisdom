@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+{% block title %}FOW - {{post.title}}{% endblock %}
+{% block content %}
+    <h1> {{ post.title }} </h1> <em>by {{ post.author.first_name }} {{ post.author.last_name }}</em>
+    <hr>
+    <article>
+        {{ post.body }}
+    </article>
+{% endblock %}

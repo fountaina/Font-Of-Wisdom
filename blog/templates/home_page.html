@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block title %}Font Of Wisdom{% endblock %}
+{% block content %}
+    <h1>ARTICLES</h1>
+    <ul>
+        {% for post in object_list %}
+            <li>
+                <h6><a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a> by <em>{{post.author.first_name}} {{post.author.last_name}}</em><br></h6>
+                {{ post.get_snippet }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
