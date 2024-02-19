@@ -2,6 +2,8 @@
 {% block title %}FOW - {{post.title}}{% endblock %}
 {% block content %}
     <h1> {{ post.title }} </h1> <em>by {{ post.author.first_name }} {{ post.author.last_name }}</em>
+    <br>
+    <small><a href="{% url 'edit_post' post.pk %}">Edit Post</a></small>
     <hr>
     <article>
         {{ post.body }}
